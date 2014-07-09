@@ -1,7 +1,5 @@
 #include <iostream>
 #include <conio.h>
-#include <cmath>
-#include <fstream>
 
 using namespace std;
 
