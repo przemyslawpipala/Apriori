@@ -1,0 +1,4 @@
+Apriori
+=======
+
+Implementacja algorytmu apriori
