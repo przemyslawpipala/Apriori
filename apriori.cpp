@@ -1,6 +1,8 @@
 #include <iostream>
 #include <conio.h>
 
+// program wykonujacy algorytm apriori 
+
 using namespace std;
 
 int tab[4][4]={{1,3,4,0},{2,3,5,0},{1,2,3,5},{3,5,0,0}};
@@ -77,8 +79,8 @@ for (int i=0; i<4; i++)
 	if (s5procent >= minsup) i5 = "5";
 	
 	cout << endl << "L1={"<< i1 <<","<<i2 <<","<<i3 <<","<<i4 <<","<<i5<<"}";
-/*
-	if (tab[0][0]==1 && tab[0][1]==2) c212++;
+
+/*	if (tab[0][0]==1 && tab[0][1]==2) c212++;
 	if (tab[0][0]==1 && tab[0][2]==2) c212++;
 	if (tab[0][0]==1 && tab[0][3]==2) c212++;
 	if (tab[0][1]==1 && tab[0][2]==2) c212++;
@@ -107,11 +109,11 @@ for (int i=0; i<4; i++)
 	for (int i=0; i<4; i++) 
 	{
      	for (int j=0; j<4; j++)
-        if (tab[i][j] == 1 || tab[i][j] == 2) c212++;
+        if (tab[i][j] == 1 && tab[i][j+1] == 2) c212++;
 	}
 	
 	cout <<endl<< "sup{1,2}=" << c212;
-	if (tab[0][0]==1 && tab[0][1]==3) c213++;
+	/*if (tab[0][0]==1 && tab[0][1]==3) c213++;
 	if (tab[0][0]==1 && tab[0][2]==3) c213++;
 	if (tab[0][0]==1 && tab[0][3]==3) c213++;
 	if (tab[0][1]==1 && tab[0][2]==3) c213++;
@@ -137,7 +139,14 @@ for (int i=0; i<4; i++)
 	if (tab[3][0]==1 && tab[3][3]==3) c213++;
 	if (tab[3][1]==1 && tab[3][2]==3) c213++;
 	if (tab[3][1]==1 && tab[3][3]==3) c213++;
-	if (tab[3][2]==1 && tab[3][3]==3) c213++;
+	if (tab[3][2]==1 && tab[3][3]==3) c213++;*/
+	
+	for (int i=0; i<4; i++) 
+	{
+     	for (int j=0; j<4; j++)
+        if (tab[i][j] == 1 && tab[i][j+1] == 3) c213++; // nie ladzia
+	}
+	
 	cout << endl <<"sup{1,3}=" << c213;
 	if (tab[0][0]==1 && tab[0][1]==5) c215++;
 	if (tab[0][0]==1 && tab[0][2]==5) c215++;
